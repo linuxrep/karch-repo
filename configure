@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [ "$1" = "--make" ]; then
+	if [ "$2" = "unstable" ]; then
+		repo-add unstable/*.db.tar.gz pkg/unstable/*.pkg.tar.xz
+	elif [ "$2" = "easy-tool" ]; then
+		repo-add easy-tool*/*.db.tar.gz pkg/easy-tool*/*.pkg.tar.xz
+	elif [ "$2" = "termux" ]; then
+		repo-add termux/*.db.tar.gz pkg/termux/*.pkg.tar.xz
+	else
+		echo "Invalid Operation"
+	fi
+else
+	echo "Invalid Option"
+fi
